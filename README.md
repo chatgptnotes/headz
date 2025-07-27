@@ -2,6 +2,8 @@
 
 A modern web application for virtual hair try-on using AI technology, built with React.js frontend and Django REST backend.
 
+**Note**: Upload image functionality in gallery has been removed as per user request.
+
 ## Features
 
 - 📸 Virtual hair try-on using photo upload or camera capture
