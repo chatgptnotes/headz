@@ -230,28 +230,207 @@ export default function TryOnPage() {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Select a Hairstyle</h3>
-                <div className="grid grid-cols-2 gap-4 max-h-96 overflow-y-auto">
-                  {hairstyles.map((style) => (
-                    <div
-                      key={style.id}
-                      onClick={() => {
-                        setSelectedStyle(style);
-                        setStep('preview');
-                      }}
-                      className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
-                    >
-                      <img
-                        src={style.image_url}
-                        alt={style.name}
-                        className="w-full h-32 object-cover rounded-md mb-2"
-                        onError={(e) => handleImageError(e, 'hairstyle')}
-                      />
-                      <p className="text-sm font-medium text-center">{style.name}</p>
-                      <p className="text-xs text-gray-500 text-center capitalize">
-                        {style.hairstyle_categories?.name} • {style.length}
-                      </p>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-3 gap-4 max-h-96 overflow-y-auto">
+                  {/* Row 1 */}
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 1,
+                        name: 'Long Wavy Hair',
+                        image_url: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Long' },
+                        length: 'Long'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=200&h=200&fit=crop&crop=face"
+                      alt="Long Wavy Hair"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Long Wavy Hair</p>
+                    <p className="text-xs text-gray-500 text-center">Long • Wavy</p>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 2,
+                        name: 'Bob Cut',
+                        image_url: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Short' },
+                        length: 'Short'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=200&h=200&fit=crop&crop=face"
+                      alt="Bob Cut"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Bob Cut</p>
+                    <p className="text-xs text-gray-500 text-center">Short • Classic</p>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 3,
+                        name: 'Pixie Cut',
+                        image_url: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Short' },
+                        length: 'Short'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=200&h=200&fit=crop&crop=face"
+                      alt="Pixie Cut"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Pixie Cut</p>
+                    <p className="text-xs text-gray-500 text-center">Short • Modern</p>
+                  </div>
+
+                  {/* Row 2 */}
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 4,
+                        name: 'Beach Waves',
+                        image_url: 'https://images.unsplash.com/photo-1595475038665-8de2a4b72bbf?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Medium' },
+                        length: 'Medium'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1595475038665-8de2a4b72bbf?w=200&h=200&fit=crop&crop=face"
+                      alt="Beach Waves"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Beach Waves</p>
+                    <p className="text-xs text-gray-500 text-center">Medium • Wavy</p>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 5,
+                        name: 'Straight Hair',
+                        image_url: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Long' },
+                        length: 'Long'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=200&h=200&fit=crop&crop=face"
+                      alt="Straight Hair"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Straight Hair</p>
+                    <p className="text-xs text-gray-500 text-center">Long • Straight</p>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 6,
+                        name: 'Curly Hair',
+                        image_url: 'https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Medium' },
+                        length: 'Medium'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=200&h=200&fit=crop&crop=face"
+                      alt="Curly Hair"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Curly Hair</p>
+                    <p className="text-xs text-gray-500 text-center">Medium • Curly</p>
+                  </div>
+
+                  {/* Row 3 */}
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 7,
+                        name: 'Updo Style',
+                        image_url: 'https://images.unsplash.com/photo-1619895862022-09114b41f16f?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Formal' },
+                        length: 'Updo'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1619895862022-09114b41f16f?w=200&h=200&fit=crop&crop=face"
+                      alt="Updo Style"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Updo Style</p>
+                    <p className="text-xs text-gray-500 text-center">Formal • Elegant</p>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 8,
+                        name: 'Braided Hair',
+                        image_url: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Braided' },
+                        length: 'Medium'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=200&h=200&fit=crop&crop=face"
+                      alt="Braided Hair"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Braided Hair</p>
+                    <p className="text-xs text-gray-500 text-center">Braided • Stylish</p>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      setSelectedStyle({
+                        id: 9,
+                        name: 'Layered Cut',
+                        image_url: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=200&h=200&fit=crop&crop=face',
+                        hairstyle_categories: { name: 'Medium' },
+                        length: 'Medium'
+                      });
+                      setStep('preview');
+                    }}
+                    className="cursor-pointer border-2 border-gray-200 rounded-lg p-3 hover:border-primary transition-colors"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=200&h=200&fit=crop&crop=face"
+                      alt="Layered Cut"
+                      className="w-full h-32 object-cover rounded-md mb-2"
+                    />
+                    <p className="text-sm font-medium text-center">Layered Cut</p>
+                    <p className="text-xs text-gray-500 text-center">Medium • Layered</p>
+                  </div>
                 </div>
               </div>
             </div>
